@@ -25,7 +25,7 @@ public class TC_01_SignIn {
 		HomePage.verfiyTitle();
 	}
 
-	@AfterTest(enabled=false)
+	@AfterTest(enabled = false)
 	public static void close() throws Exception {
 		BaseClass.closBrowser();
 	}

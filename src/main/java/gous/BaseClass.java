@@ -2,6 +2,7 @@ package gous;
 
 import java.io.FileReader;
 import java.util.Properties;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -35,15 +36,25 @@ public class BaseClass {
 	}
 
 	public static void openBrowser() throws Exception {
+
 		FileReader reader = new FileReader(file);
 
 		Properties property = new Properties();
 
 		property.load(reader);
 
+		System.setProperty("webdiver.gecko.driver", "F:\\codingRound-master\\codingRound-master\\geckodriver.exe");
+//		System.setProperty("webdiver.chrome.driver", "F:\\codingRound-master\\codingRound-master\\chromedriver.exe");
+//		 Create object of ChromeOptions class
+//		ChromeOptions options = new ChromeOptions();
+
+		// add parameter which will disable the extension
+//		options.addArguments("--disable-extensions");
+//		driver = new ChromeDriver(options);
+//		driver.get(property.getProperty("url"));
 		driver = new FirefoxDriver();
+		driver.get("https://www.cleartrip.com");
 		driver.manage().window().maximize();
-		driver.get(property.getProperty("url"));
 	}
 
 	public static void readPropertiesFile() throws Exception {

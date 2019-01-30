@@ -15,7 +15,6 @@ public class TC_03_BookHotel {
 		SignInPage.openApplication();
 	}
 
-	
 	@Test()
 	public static void bookHotel() throws Exception {
 		HomePage.click_HotelsButton();
@@ -27,7 +26,8 @@ public class TC_03_BookHotel {
 		Hotels.selectCheckOutDate();
 		Hotels.click_SearchHotel();
 		Thread.sleep(5000);
-		Hotels.click_viewDetails_Button();
+		Hotels.click_selectRoom_Button();
+		Hotels.click_BookButton();
 
 	}
 }

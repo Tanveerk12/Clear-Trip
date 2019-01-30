@@ -18,6 +18,11 @@ public class Hotels {
 		return element;
 	}
 
+	public static WebElement book_Button() {
+		element = BaseClass.getDriver().findElement(By.xpath(".//*[@id='userAccountLink']//following::button"));
+		return element;
+	}
+
 	public static WebElement where_Txtbox() {
 		element = BaseClass.getDriver().findElement(By.xpath(".//*[@id='Tags']"));
 		return element;
@@ -33,14 +38,31 @@ public class Hotels {
 		return element;
 	}
 
-	public static WebElement viewDetails_Button() {
-		element = BaseClass.getDriver().findElement(By.xpath(".//*[@id='showNearByBox']//following::button[1]"));
+	public static WebElement selectRoom_Button() {
+		element = BaseClass.getDriver().findElement(By.xpath(".//*[@id='userAccountLink']//following::button[10]"));
 		return element;
 	}
 
-	public static void click_viewDetails_Button() {
-		BaseClass.wait(viewDetails_Button());
-		viewDetails_Button().click();
+	public static void click_selectRoom_Button() {
+//		List<WebElement> list = BaseClass.getDriver()
+//				.findElements(By.xpath(".//*[@id='userAccountLink']//following::button"));
+//
+//		for (WebElement button : list) {
+//			BaseClass.wait(button);
+//			if(button.getText().equals("Select room"))
+//			System.out.println("button is " + button.getText());
+//			button.click();
+//			break;
+//		}
+
+		BaseClass.wait(selectRoom_Button());
+//		System.out.println("text is "+ selectRoom_Button().getText());
+		selectRoom_Button().click();
+	}
+
+	public static void click_BookButton() {
+		BaseClass.wait(book_Button());
+		book_Button().click();
 	}
 
 	public static void click_SearchHotel() {
